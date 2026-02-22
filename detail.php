@@ -1,6 +1,11 @@
 <?php
 require_once 'config.php';
 
+// Check if user is logged in
+if (!isLoggedIn()) {
+    redirect('login.php?redirect=detail.php&id=' . (isset($_GET['id']) ? (int)$_GET['id'] : ''));
+}
+
 // Get ad ID from URL
 $adId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 

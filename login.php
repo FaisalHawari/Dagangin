@@ -38,7 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // You might want to store this token in database for security
             }
             
-            redirect('index.php');
+            // Handle redirect after login
+            $redirectUrl = isset($_GET['redirect']) ? $_GET['redirect'] : 'index.php';
+            redirect($redirectUrl);
         } else {
             $errors[] = "Email atau password salah";
         }
@@ -266,7 +268,7 @@ if (isset($_GET['logout'])) {
                     <div class="login-card mx-auto">
                         <div class="login-header">
                             <i class="bi bi-shop fs-1 text-primary mb-3"></i>
-                            <h1 class="display-4 fw-bold mb-4">Masuk ke Dagangin</h1>
+                            <h2 class="h2 fw-bold mb-4">Masuk ke Dagangin</h2>
                             <p>Platform jual beli online terpercaya di Indonesia. Mudah, aman, dan cepat.</p>
                         </div>
 
@@ -287,6 +289,9 @@ if (isset($_GET['logout'])) {
                         <?php endif; ?>
 
                         <form method="POST" action="">
+                            <?php if (isset($_GET['redirect'])): ?>
+                                <input type="hidden" name="redirect" value="<?php echo htmlspecialchars($_GET['redirect']); ?>">
+                            <?php endif; ?>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <div class="input-group">
