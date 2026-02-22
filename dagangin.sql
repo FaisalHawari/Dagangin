@@ -179,7 +179,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `whatsapp`, `password`, `created_at`) VALUES
-(1, 'Faisal Hawari', 'faisalhawari@gmail.com', '081224017174', '$2y$10$cgd9WrkwaTu0Z6CkCRgZt.ZwabO2Vs1NQ.2uYbLId1zHLcn05CB8u', '2026-02-22 18:01:41'),
+(1, 'Faisal Hawari', 'faisalhawari@gmail.com', '081434353544', '$2y$10$cgd9WrkwaTu0Z6CkCRgZt.ZwabO2Vs1NQ.2uYbLId1zHLcn05CB8u', '2026-02-22 18:01:41'),
 (2, 'Steven WIliam', 'stevenwiliam@gmail.com', '088463829362', '$2y$10$IqTUcP9r/x0urKhTqBnj0uIlQquvDWyNokkoZYu/QNOeZvEOfbFGO', '2026-02-22 19:06:55');
 
 --
